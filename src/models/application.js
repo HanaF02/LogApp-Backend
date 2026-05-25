@@ -9,13 +9,13 @@ const applicationSchema = new mongoose.Schema(
       trim: true,
       validate: {
         validator: (v) => !/\s/.test(v),
-        message: "Application name cannot contain whitespace", //add more?
+        message: "Application name cannot contain whitespace", 
       },
     },
-    developer: { //add reference to developer model, each application belongs to a developer so that way we can link applications to developers and manage them accordingly
-      type: mongoose.Schema.Types.ObjectId, // Use ObjectId to reference the Developer model
-      ref: "Developer", // Reference the Developer model to establish a relationship between applications and developers
-      required: true, // Ensure that each application is associated with a developer, making it mandatory to link applications to developers for proper management and organization
+    developer: { 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: "Developer", 
+      required: true, 
     },
   },
   { timestamps: { createdAt: true, updatedAt: false } },
